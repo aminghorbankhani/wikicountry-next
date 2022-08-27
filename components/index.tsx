@@ -1,2 +1,3 @@
 export { default as Nav } from './Nav';
-export { default as Test } from './Test';
+export { default as SearchInput } from './SearchInput';
+export { default as RegionFilter } from './RegionFilter';

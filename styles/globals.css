@@ -27,6 +27,10 @@
     html {
         font-family: "Nunito Sans", system-ui, sans-serif;
     }
+
+    .custom-container {
+        @apply container max-w-7xl mx-auto px-8 py-4;
+    }
 }
 
 html, body {
@@ -36,3 +40,4 @@ html, body {
 #__next {
     height: 100%;
 }
+
