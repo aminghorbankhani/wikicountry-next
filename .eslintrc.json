@@ -1,3 +1,20 @@
 {
-  "extends": ["next/core-web-vitals", "airbnb-base"]
+  "extends": ["next/core-web-vitals", "airbnb-base"],
+  "globals": {
+    "JSX": true
+  },
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "linebreak-style": 0,
+    "no-undef": "off"
+  }
 }
