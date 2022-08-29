@@ -29,7 +29,7 @@
     }
 
     .custom-container {
-        @apply container max-w-7xl mx-auto px-8 py-4;
+        @apply container max-w-7xl mx-auto px-8;
     }
 }
 
@@ -38,6 +38,7 @@ html, body {
 }
 
 #__next {
-    height: 100%;
+    min-height: 100%;
+    background-color: #FAFAFA;
 }
 
