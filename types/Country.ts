@@ -7,10 +7,10 @@ interface Country{
   region: string,
   population: number,
   alpha3Code: string,
-  currencies: [{
+  currencies?: [{
     name: string,
   }],
-  languages: [{
+  languages?: [{
     name: string,
   }],
   borders?: string[],

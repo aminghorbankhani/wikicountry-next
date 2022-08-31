@@ -10,7 +10,7 @@ const Layout = ({ children } : {children: React.ReactNode}) => (
       <link rel="manifest" href="/fav/site.webmanifest" />
       <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="180x180" href="/fav/favicon-180x180.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-touch-icon.png" />
     </Head>
     <Nav />
     {children}

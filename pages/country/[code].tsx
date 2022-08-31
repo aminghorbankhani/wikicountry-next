@@ -73,8 +73,8 @@ const Detail: NextPage<{
             </div>
             <div>
               <Label title="Top Level Domain" text={country.topLevelDomain?.join(', ')} />
-              <Label title="Currencies" text={country.currencies.map((item) => item.name).join(', ')} />
-              <Label title="Languages" text={country.languages.map((item) => item.name).join(', ')} />
+              <Label title="Currencies" text={country.currencies?.map((item) => item.name).join(', ')} />
+              <Label title="Languages" text={country.languages?.map((item) => item.name).join(', ')} />
             </div>
           </div>
           <div className="flex flex-column md:flex-row items-baseline">
