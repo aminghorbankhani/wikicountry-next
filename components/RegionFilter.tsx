@@ -3,7 +3,13 @@ import { Menu, Transition } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const RegionFilter = () => {
+interface RegionFilterProps {
+  // eslint-disable-next-line no-unused-vars
+  onChange: (region: string| null) => void
+}
+
+const RegionFilter = ({ onChange } : RegionFilterProps) => {
+  const [selected, setSelected] = useState<string|null>(null);
   const [regions] = useState([
     'Africa',
     'Americas',
@@ -12,11 +18,21 @@ const RegionFilter = () => {
     'Oceania',
   ]);
 
+  const toggle = (region: string) => {
+    if (region === selected) {
+      setSelected(null);
+      onChange(null);
+    } else {
+      setSelected(region);
+      onChange(region);
+    }
+  };
+
   return (
     <Menu as="div" className="relative w-52 text-left">
       <div>
         <Menu.Button className="w-full flex items-center justify-between bg-white rounded-md px-4 py-4 shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-          <span>Filter by region</span>
+          <span>{selected || 'Filter by region'}</span>
           <FontAwesomeIcon icon={faChevronDown} />
         </Menu.Button>
       </div>
@@ -36,8 +52,9 @@ const RegionFilter = () => {
                 <Menu.Item>
                   {({ active }) => (
                     <button
+                      onClick={() => toggle(region)}
                       className={`${
-                        active && 'bg-gray-100'
+                        (active || region === selected) && 'bg-gray-100'
                       } group flex w-full items-center rounded-md px-4 py-2`}
                     >
                       {region}

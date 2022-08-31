@@ -1,10 +1,13 @@
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Button from './Button';
 
 const Nav = (): JSX.Element => {
-  const [darkMode, setDarkMode] = useState();
+  useEffect(() => {
+    // todo:: Impelemnt darkMode
+    console.log('Welcome! Implemention of darkMode is in progress...');
+  }, []);
 
   return (
     <nav className="w-100 bg-white drop-shadow">

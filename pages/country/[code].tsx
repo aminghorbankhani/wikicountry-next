@@ -4,6 +4,7 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { Button, Label } from '../../components';
 import Country from '../../types/Country';
 
@@ -41,6 +42,9 @@ const Detail: NextPage<{
 
   return (
     <div className="custom-container pb-6">
+      <Head>
+        <title>{country.name} - WikiCountry (Next)</title>
+      </Head>
       <div className="py-12">
         <Button
           onClick={() => router.back()}

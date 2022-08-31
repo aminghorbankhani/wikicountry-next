@@ -2,7 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
-const SearchInput = (): JSX.Element => (
+interface SearchProps {
+  // eslint-disable-next-line no-unused-vars
+  onChange: (region: string) => void
+}
+
+const SearchInput = ({ onChange }: SearchProps): JSX.Element => (
   <div className="relative w-1/2 lg:w-1/3 mr-3">
     <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
       <FontAwesomeIcon icon={faSearch} className="text-gray-500" />
@@ -13,6 +18,7 @@ const SearchInput = (): JSX.Element => (
       type="text"
       name="search"
       autoComplete="off"
+      onChange={(event) => onChange(event.target.value as string)}
     />
   </div>
 );
